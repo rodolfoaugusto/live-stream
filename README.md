@@ -2,8 +2,8 @@
 The Live Stream Stack is a platform to release new scalable live stream channels on AWS.
 
 # Notes
-- The ViaPlay Goal is reach at least 12 million subscribers in 2025.
-- Company expanding to another countries(regions).
+- The ViaPlay goal is to reach at least 12 million subscribers in 2025.
+- Company expanding to other regions.
 - Videos on-demand and live sports.
 
 ## Infrastructure Architecture
