@@ -17,11 +17,10 @@ jobs:
           aws-region: 'us-east-1'
       - name: Install dependencies
         run: yarn
-        env:
-          CHANNEL_NAME: ${{ secrets.CHANNEL_NAME }}
-          STREAM_NAME: ${{ secrets.STREAM_NAME }}
-          SECURITY_GROUP_INPUTS_IP: ${{ secrets.SECURITY_GROUP_INPUTS_IP }}
-          DOMAIN_NAME: ${{ secrets.DOMAIN_NAME }}
+      - name: Enviroment file creation
+        run: |
+          touch .env
+          echo CHANNEL_NAME=${{ secrets.CHANNEL_NAME }}\nSTREAM_NAME=${{ secrets.STREAM_NAME }}\nSECURITY_GROUP_INPUTS_IP=${{ secrets.SECURITY_GROUP_INPUTS_IP }}\nDOMAIN_NAME=${{ secrets.DOMAIN_NAME }} >> .env
       - name: Test Run
         run: yarn test
       - name: CDK Synth
