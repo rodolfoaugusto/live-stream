@@ -1,0 +1,30 @@
+on: [push, workflow_dispatch]
+
+jobs:
+  aws_cdk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: 'us-east-1'
+      - name: Install dependencies
+        run: yarn
+        env:
+          CHANNEL_NAME: ${{ secrets.CHANNEL_NAME }}
+          STREAM_NAME: ${{ secrets.STREAM_NAME }}
+          SECURITY_GROUP_INPUTS_IP: ${{ secrets.SECURITY_GROUP_INPUTS_IP }}
+          DOMAIN_NAME: ${{ secrets.DOMAIN_NAME }}
+      - name: Test Run
+        run: yarn test
+      - name: CDK Synth
+        run: yarn cdk synth
+      - name: CDK Stack Deploy
+        run: yarn cdk deploy --all --require-approval never
