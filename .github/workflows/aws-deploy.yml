@@ -18,9 +18,7 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Enviroment file creation
-        run: |
-          touch .env
-          echo CHANNEL_NAME=${{ secrets.CHANNEL_NAME }}\nSTREAM_NAME=${{ secrets.STREAM_NAME }}\nSECURITY_GROUP_INPUTS_IP=${{ secrets.SECURITY_GROUP_INPUTS_IP }}\nDOMAIN_NAME=${{ secrets.DOMAIN_NAME }} >> .env
+        run: echo -e "CHANNEL_NAME=${{ secrets.CHANNEL_NAME }}\nSTREAM_NAME=${{ secrets.STREAM_NAME }}\nSECURITY_GROUP_INPUTS_IP=${{ secrets.SECURITY_GROUP_INPUTS_IP }}\nDOMAIN_NAME=${{ secrets.DOMAIN_NAME }}" >> .env
       - name: Test Run
         run: yarn test
       - name: CDK Synth
