@@ -16,7 +16,6 @@ export class CloudFrontStack extends Stack {
         let jsondata = JSON.parse(JSON.stringify(JSONfile))
         const stackName = `LiveStreamStack-${channelName}`
         if(jsondata.hasOwnProperty(stackName)){
-          console.log('Existe padrin')
           new CloudFront(this, channelName, {
             domainOrigin: jsondata[stackName]['mediapackageendpoint']
           })
