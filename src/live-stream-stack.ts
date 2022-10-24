@@ -1,6 +1,6 @@
-import { Stack, Construct, StackProps, ConcreteDependable, CfnOutput } from '@aws-cdk/core';
-import { MediaPackage } from './mediapackage';
-import { MediaLive } from './medialive';
+import { Stack, Construct, StackProps, ConcreteDependable, CfnOutput } from '@aws-cdk/core'
+import { MediaPackage } from './mediapackage'
+import { MediaLive } from './medialive'
 
 import { config } from 'dotenv'
 config({ path: './.env' })
@@ -30,10 +30,10 @@ export class LiveStreamStack extends Stack {
     mediaDep.add(mediaPackage.channel)
     mediaPackage.hlsEndpoint.node.addDependency(mediaDep)
     mediaLive.channelLive.node.addDependency(mediaDep)
-    // mediaLive.channelLive._toCloudFormation()
 
     // --- Ready to Start
     const region = process.env.CDK_DEFAULT_REGION as string
+
     // Media Live Channel Ready
     new CfnOutput(this, `live-channel-ready`, {
       value: `https://${region}.console.aws.amazon.com/medialive/home?region=${region}#!/channels`

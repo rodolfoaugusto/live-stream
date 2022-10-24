@@ -10,7 +10,7 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "deploy": "cdk deploy --outputs-file urlwebsite.json"
+    "deploy": "cdk deploy --outputs-file outputs.json --all"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.83.0",

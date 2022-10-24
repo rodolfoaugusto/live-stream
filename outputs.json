@@ -1,0 +1,7 @@
+{
+  "LiveStreamStack-example-sports-channel": {
+    "demoplayer": "https://hls-js.netlify.app/demo/?src=https://547f72e6652371c3.mediapackage.us-east-1.amazonaws.com/out/v1/1cf5a7b7d7224c6dbe23750e320cb0e8/index.m3u8",
+    "mediapackageendpoint": "https://547f72e6652371c3.mediapackage.us-east-1.amazonaws.com/out/v1/1cf5a7b7d7224c6dbe23750e320cb0e8/index.m3u8",
+    "livechannelready": "https://us-east-1.console.aws.amazon.com/medialive/home?region=us-east-1#!/channels"
+  }
+}

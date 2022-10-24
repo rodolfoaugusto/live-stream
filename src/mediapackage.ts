@@ -43,8 +43,7 @@ export class MediaPackage {
       hlsPackage
     })
 
-    // Output the url stream to player
-    new CfnOutput(scope, `media-package-url-stream`, {
+    new CfnOutput(scope, `media-package-endpoint`, {
       value: this._hlsEndpoint.attrUrl
     })
   }

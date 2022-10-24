@@ -34,7 +34,7 @@ export class MediaLive {
       inputSecurityGroups: [securityGroupsInput.ref],
       destinations: [{ streamName }]
     })
-
+   
     // IAM Role
     const roleName = `medialive-role-${channelName}`
     let iamRole = new Role(scope, roleName, {
