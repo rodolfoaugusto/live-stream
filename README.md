@@ -1,11 +1,6 @@
 # Live Stream Stack
 The Live Stream Stack is a platform to release new scalable live stream channels on AWS.
 
-# Notes
-- The ViaPlay goal is to reach at least 12 million subscribers in 2025.
-- Company expanding to other regions.
-- Videos on-demand and live sports.
-
 # To-do
 1. Add WAF to CloudFront
 2. Add custom domain to CloudFront
